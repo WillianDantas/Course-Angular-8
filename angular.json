@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "couser-angular"
+    }
+  },
+  "defaultProject": "couser-angular",
+  "cli": {
+    "analytics": "0850f7af-4ece-45b2-8d95-68a1ebb9c11a"
+  }
 }
