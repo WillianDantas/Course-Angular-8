@@ -1,6 +1,6 @@
 <h2>Course Id = {{course.codigo}}</h2>
 
-<form #couseForm="ngForm">
+<form #couseForm="ngForm" *ngIf="course">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Name:</label>
     
@@ -35,10 +35,14 @@
         <label class="col-sm-2 col-form-label">Description:</label>
     
         <div class="col-sm-10">
-            <input [(ngModel)]="course.description" required type="text"  name="description" #courseDescription = 'ngModel' [ngClass] = "{'is-invalid': courseDescription.invalid}" class="form-control">
+            <textarea [(ngModel)]="course.description" required   name="description" #courseDescription = 'ngModel' [ngClass] = "{'is-invalid': courseDescription.invalid}" class="form-control"></textarea>
             <div class="invalid-feedback">
                 <span> Course description is required</span>
             </div>
         </div>
     </div>
+
+    <button [disabled]="couseForm.invalid" (click)="save()" class="btn btn-primary mr-2">Save</button>
+    <button class="btn btn-secondary" [routerLink]="['/courses']" >Back</button>
+    
 </form>
